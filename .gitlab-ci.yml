@@ -1,0 +1,38 @@
+variables:
+  LC_ALL: C
+
+stages:
+  - image
+  - test2
+  - test3
+
+build_image:
+  stage: image
+  image: docker:git
+  services:
+  - docker:dind
+  before_script:
+    - docker info
+  script:
+    - cd CI
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.labs.nic.cz
+    - docker build -t registry.labs.nic.cz/turris/python-ubus .
+    - docker push registry.labs.nic.cz/turris/python-ubus:latest
+  tags:
+    - dind
+  only:
+    - CI
+
+test_with_python2:
+  stage: test2
+  image: registry.labs.nic.cz/turris/python-ubus
+  script:
+    - export LD_LIBRARY_PATH=:/usr/local/lib
+    - python setup.py test
+
+test_with_python3:
+  stage: test3
+  image: registry.labs.nic.cz/turris/python-ubus
+  script:
+    - export LD_LIBRARY_PATH=:/usr/local/lib
+    - python setup.py test
