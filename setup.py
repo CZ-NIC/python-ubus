@@ -20,8 +20,6 @@ extension = Extension(
     'ubus',
     ['./ubus_python.c'],
     libraries=['ubus', 'blobmsg_json', 'ubox'],
-    include_dirs=['/home/stepan/project/openwrt/ubus'],
-    library_dirs=['/home/stepan/project/openwrt/ubus'],
 )
 
 setup(
