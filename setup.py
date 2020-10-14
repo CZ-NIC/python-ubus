@@ -26,7 +26,7 @@ setup(
     name='ubus',
     version='0.1.1',
     author="Stepan Henek",
-    url="https://gitlab.labs.nic.cz/turris/python-ubus",
+    url="https://gitlab.nic.cz/turris/python-ubus",
     description="Python bindings for libubus",
     long_description=open("README.rst").read(),
     ext_modules=[extension],
