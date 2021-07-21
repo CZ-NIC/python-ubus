@@ -21,7 +21,7 @@
 #include <stdio.h>
 
 #ifndef UBUS_UNIX_SOCKET
-#define UBUS_UNIX_SOCKET "/var/run/ubus.sock"
+#define UBUS_UNIX_SOCKET "/var/run/ubus/ubus.sock"
 #endif
 
 #define DEFAULT_SOCKET UBUS_UNIX_SOCKET

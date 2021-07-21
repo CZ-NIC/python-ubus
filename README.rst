@@ -20,7 +20,7 @@ connect and disconnect
 To connect you need to::
 
     import ubus
-    ubus.connect("/var/run/ubus.sock")
+    ubus.connect("/var/run/ubus/ubus.sock")
 
 To disconnect you can simply::
 
