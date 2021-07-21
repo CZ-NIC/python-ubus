@@ -24,7 +24,7 @@ extension = Extension(
 
 setup(
     name='ubus',
-    version='0.1.1',
+    version='0.1.2',
     author="Stepan Henek",
     url="https://gitlab.nic.cz/turris/python-ubus",
     description="Python bindings for libubus",
